@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: jarvis-hf-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: HF_API_KEY
+        sync: false
+      - key: WEATHER_API_KEY
+        sync: false
+      - key: GNEWS_API_KEY
+        sync: false
